@@ -5,4 +5,11 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  field :username
+  key :username
+  
+  field :firstname
+  field :lastname
+  field :twitter
+  field :website
 end
