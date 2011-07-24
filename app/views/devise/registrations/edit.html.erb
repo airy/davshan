@@ -3,14 +3,37 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <p><%= f.label :email %><br />
-  <%= f.email_field :email %></p>
+  <fieldset>
+    <legend>Account Info</legend>
 
-  <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password %></p>
+    <p><%= f.label :username %><br />
+    <%= resource.username %></p>
 
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
+    <p><%= f.label :email %><br />
+    <%= f.email_field :email %></p>
+
+    <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password %></p>
+
+    <p><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %></p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Personal Info</legend>
+    
+    <p><%= f.label :firstname %><br />
+    <%= f.text_field :firstname %></p>
+
+    <p><%= f.label :lastname %><br />
+    <%= f.text_field :lastname %></p>
+
+    <p><%= f.label :twitter %><br />
+    <%= f.text_field :twitter %></p>
+
+    <p><%= f.label :website %><br />
+    <%= f.text_field :website %></p>
+  </fieldset>
 
   <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></p>
@@ -23,3 +46,8 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
 
 <%= link_to "Back", :back %>
+
+
+
+    
+
