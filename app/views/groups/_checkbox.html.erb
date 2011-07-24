@@ -1,0 +1,11 @@
+<li>
+  <%= check_box_tag "user[group_ids][]", group.id, user.group_ids.include?(group.id)  %>
+  <%= group.name %>
+  <% if group.has_children? %>
+    <ul>
+      <% group.children.order_by([:name, :asc]).each do |sub| %>
+        <%= render "groups/checkbox", :group => sub, :user => user %>
+      <% end %>
+    </ul>
+  <% end %>
+</li>
