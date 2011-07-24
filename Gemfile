@@ -9,6 +9,9 @@ gem 'rails', '3.0.9'
 gem 'mongoid', '~> 2.0'
 gem 'bson_ext', '~> 1.3'
 
+# Ancestry For Trees
+gem 'mongoid-ancestry'
+
 # Devise for authenticaiton.
 gem 'devise'
 
