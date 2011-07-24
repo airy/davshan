@@ -35,6 +35,15 @@
     <p><%= f.label :website %><br />
     <%= f.text_field :website %></p>
   </fieldset>
+  
+  <fieldset>
+    <legend>Groups</legend>
+    <ul>
+    <% Group.roots.order_by([:name, :asc]).each do |root| %>
+      <%= render "groups/checkbox", :group => root, :user => resource %>
+    <% end %>
+    </ul>
+  </fieldset>
 
   <p><%= f.submit "Sign up" %></p>
 <% end %>
