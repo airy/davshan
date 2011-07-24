@@ -15,6 +15,9 @@ gem 'mongoid-ancestry'
 # Devise for authenticaiton.
 gem 'devise'
 
+# cancan for authorization.
+gem 'cancan'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
