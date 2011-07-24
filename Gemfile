@@ -5,6 +5,10 @@ gem 'rails', '3.0.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# Mongoid for mongodb
+gem 'mongoid', '~> 2.0'
+gem 'bson_ext', '~> 1.3'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
