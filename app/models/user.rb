@@ -12,4 +12,8 @@ class User
   field :lastname
   field :twitter
   field :website
+
+  validates :username, :presence => true, :uniqueness => true, :length => { :within => 4..20 }, :format => { :with => /[A-Za-z0-9]+/ }
+  validates :email, :presence => true, :uniqueness => true, :length => {:maximum => 254}, :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
+
 end
