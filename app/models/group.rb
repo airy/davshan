@@ -4,4 +4,5 @@ class Group
   has_ancestry
   
   field :name, :type => String
+  has_and_belongs_to_many :users, :autosave => true, :index => true, :unique => true
 end
