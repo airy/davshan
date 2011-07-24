@@ -7,6 +7,22 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <header>
+    <h1>
+      <%= link_to "home", root_url %>
+    </h1>
+    <nav>
+      <menu>
+        <% if user_signed_in? %>
+          <li><%= link_to :account, edit_user_registration_path %></li>
+          <li><%= link_to :sign_out, destroy_user_session_path %></li>
+        <% else %>
+          <li><%= link_to :sign_in, new_user_session_path %></li>
+          <li><%= link_to :sign_up, new_user_registration_path %></li>
+        <% end %>
+      </menu>
+    </nav>
+  </header>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
