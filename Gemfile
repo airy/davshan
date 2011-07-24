@@ -9,6 +9,8 @@ gem 'rails', '3.0.9'
 gem 'mongoid', '~> 2.0'
 gem 'bson_ext', '~> 1.3'
 
+# Devise for authenticaiton.
+gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'
