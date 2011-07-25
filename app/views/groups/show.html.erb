@@ -1,0 +1,26 @@
+<%= content_tag_for :article, resource do %>
+  <header>
+    <h2><%= resource %></h2>
+  </header>
+  <nav>
+    <%= link_to "Edit", edit_resource_path if can? :update, resource %>
+    <%= link_to "delete", resource, :confirm => "Are you sure?", :method => :delete if can? :delete, resource %>
+  </nav>
+  <fieldset>
+    <legend>Details</legend>
+    <p>Parent Group: 
+      <%= resource.depth > 0 ? link_to("#{resource.parent} (#{resource.parent.children.count})", resource.parent) : "Main Group" %>
+    </p>
+    
+      <p>Sub Groups : 
+      <% if resource.has_children? %>
+        <ul>
+          <% resource.children.each do |child| %>
+            <li><%= link_to "#{child} (#{child.children.count})", child %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </p>
+  
+  </fieldset>
+<% end %>
