@@ -13,6 +13,10 @@ class User
   field :twitter
   field :website
 
+  # monkey patch for https://github.com/plataformatec/devise/issues/240
+  field :current_sign_in_at, :type => Time
+  field :last_sign_in_at, :type => Time
+  
   validates :username, :presence => true, :uniqueness => true, :length => { :within => 4..20 }, :format => { :with => /[A-Za-z0-9]+/ }
   validates :email, :presence => true, :uniqueness => true, :length => {:maximum => 254}, :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
   
