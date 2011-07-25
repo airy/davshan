@@ -1,5 +1,6 @@
 Davshan::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :path => "account" 
+   
 
   root :to => "home#index"
 
