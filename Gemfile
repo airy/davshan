@@ -24,6 +24,9 @@ gem 'stateflow'
 # inherited resources for DRYing controllers
 gem 'inherited_resources'
 
+# Use jQuery instead of prototype
+gem "jquery-rails"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
