@@ -1,0 +1,12 @@
+<%= form_for resource do |f| %>
+  <fieldset>
+    <legend>Group</legend>
+    
+    <p><%= f.label :parent %><br />
+    <%= raw tree_select(resource, Group, resource.parent_id, :include_blank => true) %></p>
+    
+    <p><%= f.label :name %><br />
+    <%= f.text_field :name %></p>
+  </fieldset>
+  <p><%= f.submit %></p>
+<% end %>
