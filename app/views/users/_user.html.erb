@@ -1,0 +1,6 @@
+<%= content_tag_for :article, user do %>
+  <%= link_to user_path(user) do %>
+    <%= image_tag user.avatar_url(48), :alt => "avatar of #{user}" %>  
+    <%= user %>
+  <% end %>
+<% end %>
