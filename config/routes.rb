@@ -1,6 +1,13 @@
 Davshan::Application.routes.draw do
   devise_for :users, :path => "account" 
    
+  resources :users, :except => [:new, :create, :destroy] do
+    member do
+      get :promote
+      get :demote
+    end
+  end
+
 
   root :to => "home#index"
 
