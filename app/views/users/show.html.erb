@@ -1,0 +1,34 @@
+<%= content_tag_for :article, resource do %>
+  <header>
+    <h2>
+      <%= image_tag resource.avatar_url(48), :alt => "avatar of #{resource}" %>  
+      <%= resource %>'s Profile
+    </h2>
+  </header>
+  <nav>
+    <%= link_to "Edit", edit_user_registration_path if resource == current_user %>
+    <%= link_to "Edit", edit_resource_path if can? :update, resource %>
+  </nav>
+
+    <fieldset>
+      <legend>Account Info</legend>      
+      <p>Username : <%= resource %></p>
+      <% if can? :see_private_info, resource %>
+        <p>Email : <%= resource.email %></p>
+      <% end %>
+      <p>
+        Role : <%= resource.role %>
+        <%= link_to "Promote", promote_user_path(resource) if can? :promote, resource %>
+        <%= link_to "Demote",  demote_user_path(resource) if can? :demote, resource %>
+      </p>
+    </fieldset>
+  
+    <fieldset>
+      <legend>Personal Info</legend>   
+      <p>First Name : <%= resource.firstname %></p>
+      <p>Last Name : <%= resource.lastname %></p>
+      <p>Twitter : <%= resource.twitter %></p>
+      <p>Website : <%= resource.website %></p>
+    </fieldset>
+  
+<% end %>
