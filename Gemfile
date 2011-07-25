@@ -18,6 +18,9 @@ gem 'devise'
 # cancan for authorization.
 gem 'cancan'
 
+# stateflow : state machine.
+gem 'stateflow'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
