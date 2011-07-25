@@ -23,11 +23,13 @@
       </menu>
     </nav>
   </header>
-
-  <%= yield %>
   <section id="notifications">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+  </section>
+  
+  <section id="content">
+    <%= yield %>
   </section>
   
 
