@@ -15,13 +15,13 @@
     <nav>
       <menu>
         <% if user_signed_in? %>
-          <li><%= link_to :sign_out, destroy_user_session_path %></li>
           <li>
             <%= link_to( current_user ) do %>
               <%= image_tag current_user.avatar_url(24), :alt => "small avatar of #{current_user}" %>
               <%= current_user %>
             <% end %>
           </li>
+          <li><%= link_to :sign_out, destroy_user_session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to :sign_in, new_user_session_path %></li>
           <li><%= link_to :sign_up, new_user_registration_path %></li>
