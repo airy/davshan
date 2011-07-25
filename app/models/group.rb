@@ -7,4 +7,7 @@ class Group
   has_and_belongs_to_many :users, :autosave => true, :index => true, :unique => true
   
   alias :to_s :name
+  
+  default_scope order_by([:name, :asc])
+  
 end
