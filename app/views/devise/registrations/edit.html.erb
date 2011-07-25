@@ -6,6 +6,9 @@
   <fieldset>
     <legend>Account Info</legend>
 
+    <p><%= f.label :avatar %><br />
+    <%= image_tag resource.avatar_url %></p>
+
     <p><%= f.label :username %><br />
     <%= resource.username %></p>
 
