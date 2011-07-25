@@ -21,6 +21,9 @@ gem 'cancan'
 # stateflow : state machine.
 gem 'stateflow'
 
+# inherited resources for DRYing controllers
+gem 'inherited_resources'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
