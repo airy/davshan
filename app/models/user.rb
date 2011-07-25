@@ -17,5 +17,10 @@ class User
   validates :email, :presence => true, :uniqueness => true, :length => {:maximum => 254}, :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
   
   has_and_belongs_to_many :groups, :autosave => true, :index => true, :unique => true
+  
+  def avatar_url(size = 64)
+    gravatar_id = Digest::MD5.hexdigest(self.email.downcase)
+    "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
+  end
 
 end
