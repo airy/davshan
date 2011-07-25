@@ -1,0 +1,10 @@
+<li>
+  <%= link_to group.name, group %>
+  <% if group.has_children? %>
+    <ul>
+      <% group.children.order_by([:name, :asc]).each do |sub| %>
+        <%= render sub %>
+      <% end %>
+    </ul>
+  <% end %>
+</li>

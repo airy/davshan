@@ -1,0 +1,6 @@
+<h1>Groups</h1>
+  <nav>
+    <%= link_to "Create New Group", new_resource_path if can? :create, Group %>
+  </nav>
+<%= render collection.roots %>
+
