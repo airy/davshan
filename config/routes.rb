@@ -8,6 +8,7 @@ Davshan::Application.routes.draw do
     end
   end
 
+  resources :groups
 
   root :to => "home#index"
 
