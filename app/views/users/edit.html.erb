@@ -1,0 +1,59 @@
+<h1>Edit User : <%= resource %></h1>
+<%= form_for resource do |f| %>
+  <% if resource.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= "#{pluralize(resource.errors.count, "error")} prohibited this #{resource_instance_name.to_s.downcase} from being saved:" %>
+      </h2> 
+      <ul>
+        <% resource.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <fieldset>
+    <legend>Account Info</legend>
+
+    <p><%= f.label :avatar %><br />
+    <%= image_tag resource.avatar_url %></p>
+
+    <p><%= f.label :username %><br />
+    <%= resource.username %></p>
+
+    <p><%= f.label :email %><br />
+    <%= f.email_field :email %></p>
+
+  </fieldset>
+
+  <fieldset>
+    <legend>Personal Info</legend>
+    
+    <p><%= f.label :firstname %><br />
+    <%= f.text_field :firstname %></p>
+
+    <p><%= f.label :lastname %><br />
+    <%= f.text_field :lastname %></p>
+
+    <p><%= f.label :twitter %><br />
+    <%= f.text_field :twitter %></p>
+
+    <p><%= f.label :website %><br />
+    <%= f.text_field :website %></p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Groups</legend>
+    <ul>
+    <% Group.roots.order_by([:name, :asc]).each do |root| %>
+      <%= render "groups/checkbox", :group => root, :user => resource %>
+    <% end %>
+    </ul>
+  </fieldset>
+
+  <p><%= f.submit "Update" %></p>
+<% end %>
+<%= link_to "Back", :back %>
+
