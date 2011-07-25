@@ -1,5 +1,6 @@
 class UsersController < InheritedResources::Base
   actions :all, :except => [:new, :create, :destroy]
+  load_and_authorize_resource
   
   def promote
     resource.promote!
