@@ -9,6 +9,8 @@ class Ability
       can :manage, [Group, User]
       cannot :promote, User, :role => 'admin'
       cannot :demote, User, :role => 'user'
+      cannot :demote, User, :id => user.id
+      cannot :promote, User, :id => user.id
     elsif user.role? :moderator
       can :read, [Group, User]
       can :update, Group
