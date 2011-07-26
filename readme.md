@@ -2,6 +2,7 @@ Davshan
 =======
 
 Specs are here : http://li.mk/o
+Live demo is here : http://davshan.heroku.com
 
 Installation
 ------------
