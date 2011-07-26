@@ -33,5 +33,14 @@
       <p>Twitter : <%= resource.twitter %></p>
       <p>Website : <%= resource.website %></p>
     </fieldset>
+   
+  <fieldset>
+    <legend>Groups</legend>
+    <ul>
+      <% resource.groups.each do |g| %>
+        <li><%= link_to "#{g.name} (#{g.children.count})", g %></li>
+      <% end %>
+    </ul>
+  </fieldset>  
   
 <% end %>
