@@ -1,9 +1,9 @@
 <%= content_tag_for :article, resource do %>
   <header>
-    <h2>
+    <h1>
       <%= image_tag resource.avatar_url(48), :alt => "avatar of #{resource}" %>  
       <%= resource %>'s Profile
-    </h2>
+    </h1>
   </header>
   <nav>
     <% if resource == current_user %>
